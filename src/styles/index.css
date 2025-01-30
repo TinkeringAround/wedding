@@ -1,19 +1,58 @@
 :root {
-    /* Insert Global Variables here */
+  --green: rgb(80, 109, 66);
+  --mint: rgb(166, 175, 162);
+
+  --purple: rgb(87, 46, 88);
+  --violett: rgb(175, 161, 175);
+
+  --creme: rgb(223, 203, 146);
+
+  --white: rgb(255, 255, 255);
+  --grey: rgb(136, 136, 136);
+  --black: rgb(25, 25, 25);
 }
 
-html, head,
-body {
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
+* {
+  color: var(--black);
+}
 
-    font-size: 16px;
+html,
+head,
+body {
+  height: calc(var(--vh) * 100);
+  width: 100vw;
+  margin: 0;
+
+  font-size: 16px;
 }
 
 body {
-    /* Adjust Global Layout here */
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: minmax(0, 1fr);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+
+  overflow-x: hidden;
+}
+
+main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+
+  margin: 0 auto;
+  max-width: 1200px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--green);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--white);
 }
