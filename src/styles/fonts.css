@@ -1,17 +1,13 @@
-.windsong-regular {
-  font-family: "WindSong", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.windsong-medium {
-  font-family: "WindSong", serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
 .bodoni-moda {
   font-family: "Bodoni Moda", serif;
   font-optical-sizing: auto;
   font-style: normal;
+}
+
+@font-face {
+  font-family: "Silence Rocken";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://assets.ctfassets.net/df3z1ez0ud42/6Yt8OVwHxwFTBCqPLtq5a/c44ec58d2bbc9896b113530999fe487f/Silence_Rocken.ttf")
+    format("truetype");
 }

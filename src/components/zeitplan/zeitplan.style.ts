@@ -12,59 +12,53 @@ template.innerHTML = `
   width: 100vw;
   max-width: inherit;
 
+  background: var(--mint);
+
   box-sizing: border-box;
 }
 
-:host(*) {
+section {
   max-width: 700px;
   margin: 0 auto;
 
-  color: var(--green);
+  color: var(--white);
 }
 
 section:not(:last-of-type) {
   margin-bottom: 2rem;
 }
 
-h1 {
+h1, h2 {
   margin: 0;
 
   font-family: "Silence Rocken", serif;
-  font-weight: 500;
   font-style: normal;
-  font-size: 3rem;
+  font-size: 1.25rem;
   text-align: center;
 
-  color: var(--green);
+  color: var(--white);
+}
+
+h1 {
+  margin-bottom: 2rem;
+
+  font-size: 3rem;
 }
 
 p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.75;
   text-align: center;
-  color: var(--black);
-}
-
-a {
-  color: inherit;
-  text-decoration: underline;
-  transition: all 0.1s ease-in-out;
-}
-
-span {
-  text-decoration: underline;
-}
-
-a:hover {
-  color: var(--mint);
 }
 
 @media (max-width: 800px) {
-  :host(*) {
+  :host {
+    padding: 50px 0;
+  }
+
+  section {
     max-width: 85%;
     margin: 0 auto;
-
-    padding: 50px 0;
   }
 
   h1 {
@@ -72,9 +66,7 @@ a:hover {
   }
 
   p {
-    margin: 0 0 1rem;
-    
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 } 
 </style>`;

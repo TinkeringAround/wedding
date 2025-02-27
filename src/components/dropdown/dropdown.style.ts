@@ -1,79 +1,88 @@
-// import { ContextMenu } from '../context-menu/context-menu.webcomponent';
+import { ContextMenu } from "../context-menu/context-menu.webcomponent";
 
-// const template = document.createElement('template');
-// template.innerHTML = `
-// <style>
-// :host {
-//    --fontSize: 1rem;
-//    --borderRadius: 2rem;
-//    --padding: 0.75rem 1.25rem;
+const template = document.createElement("template");
+template.innerHTML = `
+<style>
+:host {
+   --fontSize: 1rem;
+   --borderRadius: 2rem;
+   --padding: 0.75rem 1.25rem;
 
-//    --fontFamily: 'Poppins', serif;
-//    --color: var(--dark);
+   --fontFamily: "Bodoni Moda", serif;
+   --color: var(--dark);
 
-//    position: relative;
+   position: relative;
 
-//    display: flex;
-//    flex-direction: column;
+   display: flex;
+   flex-direction: column;
 
-//    height: min-content;
-//    min-height: 60px;
-//    padding: 10px;
+   height: min-content;
+   min-height: 60px;
+   padding: 10px;
+   width: 500px;
 
-//    font-size: var(--fontSize);
-//    font-family: 'Poppins', serif;
-//    font-weight: 400;
-//    font-style: normal;
-//    background: var(--white);
-//    color: var(--color);
+   font-size: var(--fontSize);
+   font-family: var(--fontFamily);
+   font-optical-sizing: auto;
+   font-style: normal;
 
-//    border-bottom: 2px solid transparent;
-//    border-radius: 2px;
-//    outline: none;
+   background: var(--white);
+   color: var(--color);
 
-//    transition: background 0.15s ease-in-out;
-//    box-sizing: border-box;
-// }
+   border-bottom: 2px solid transparent;
+   border-radius: 2px;
+   outline: none;
 
-// [part="select"] {
-//    height: 50px;
-//    padding: 0.75rem 1.25rem;
+   transition: background 0.15s ease-in-out;
+   box-sizing: border-box;
+}
 
-//    font-size: inherit;
-//    font-family: inherit;
-//    font-weight: inherit;
-//    font-style: inherit;
+[part="select"] {
+   height: 50px;
+   padding: 0.75rem 1.25rem;
 
-//    background: transparent;
-//    color: var(--dark);
+   font-size: inherit;
+   font-family: inherit;
+   font-weight: inherit;
+   font-style: inherit;
 
-//    border-radius: 2px;
-//    border: none;
-//    outline: none !important;
+   background: transparent;
+   color: var(--color);
 
-//    transition: all 0.1s ease-in-out;
-//    box-sizing: border-box;
+   border-radius: 2px;
+   border: none;
+   outline: none !important;
 
-//    appearance: none;
-// }
+   transition: all 0.1s ease-in-out;
+   box-sizing: border-box;
 
-// ${ContextMenu.tag} {
-//    --position: absolute;
+   appearance: none;
+}
 
-//     border-top: solid 2px var(--blue);
-//     border-radius: 0 0 10px 10px;
-// }
+${ContextMenu.tag} {
+   --position: absolute;
 
-// :host(:hover), :host(:focus), :host(:focus-visible) {
-//   border-bottom: solid 1px var(--blue);
-//   background: var(--grey);
-// }
+    border-top: solid 2px var(--green);
+    border-radius: 0 0 10px 10px;
+}
 
-// :host([invalid]) {
-//   border-bottom: solid 1px var(--red);
-// }
-// </style>`;
+:host(:hover), :host(:focus), :host(:focus-visible) {
+  border-bottom: solid 2px var(--green);
+  background: var(--white);
+  color: var(--black);
+}
 
-// export const createStyles = () => {
-//     return template.content.cloneNode(true);
-// };
+@media (max-width: 800px) {
+   :host {
+      width: 100%;
+   }
+
+   ${ContextMenu.tag} {
+      --minWidth: 100%;
+   }
+}
+</style>`;
+
+export const createStyles = () => {
+  return template.content.cloneNode(true);
+};

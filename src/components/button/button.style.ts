@@ -1,74 +1,74 @@
-// const template = document.createElement('template');
-// template.innerHTML = `
-// <style>
-// :host {
-//     --fontSize: 0.8rem;
-//     --padding: 0.75rem 1rem;
+const template = document.createElement("template");
+template.innerHTML = `
+<style>
+:host {
+    --fontSize: 1rem;
+    --padding: 0.75rem 1rem;
 
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-//     min-width: 125px;
-//     max-width: 200px;
-//     padding: var(--padding);
-//     text-transform: uppercase;
+    height: 65px;
+    padding: var(--padding);
+    text-transform: uppercase;
 
-//     font-size: var(--fontSize);
-//     font-family: 'Poppins', serif;
-//     font-weight: 400;
-//     font-style: normal;
-//     border-radius: 5px;
-//     border: solid 2px transparent;
+    font-size: var(--fontSize);
+    font-family: "Bodoni Moda", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 
-//     box-sizing: border-box;
+    border-radius: 5px;
+    border: solid 2px transparent;
 
-//     transition: all 0.15s ease-in-out;
-//     cursor: pointer;
-// }
+    box-sizing: border-box;
 
-// :host([variant="primary"]) {
-//     background: var(--blue);
-//     color: var(--white);
-// }
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+}
 
-// :host([variant="secondary"]) {
-//     background: transparent;
-//     color: var(--dark);
-// }
+:host([variant="primary"]) {
+    background: var(--green);
+    color: var(--white);
+}
 
-// :host([variant="danger"]) {
-//     background: var(--red);
-//     color: var(--white);
-// }
+:host([variant="secondary"]) {
+    background: transparent;
+    color: var(--dark);
+}
 
-// :host([variant="primary"]:not([disabled]):hover) {
-//     background: var(--white);
-//     color: var(--blue);
-//     border: solid 2px var(--blue);
-// }
+:host([variant="danger"]) {
+    background: var(--red);
+    color: var(--white);
+}
 
-// :host([variant="secondary"]:not([disabled]):hover) {
-//     background: var(--blue);
-//     color: var(--white);
-//     border: solid 2px var(--white);
-// }
+:host([variant="primary"]:not([disabled]):hover) {
+    background: var(--white);
+    color: var(--blue);
+    border: solid 2px var(--green);
+}
 
-// :host([variant="danger"]:not([disabled]):hover) {
-//     background: var(--white);
-//     color: var(--red);
-//     border: solid 2px var(--red);
-// }
+:host([variant="secondary"]:not([disabled]):hover) {
+    background: var(--blue);
+    color: var(--white);
+    border: solid 2px var(--white);
+}
 
-// :host([disabled]) {
-//     background: transparent;
-//     color: var(--dark);
-//     border: solid 2px var(--dark);
+:host([variant="danger"]:not([disabled]):hover) {
+    background: var(--white);
+    color: var(--red);
+    border: solid 2px var(--red);
+}
 
-//     cursor: default;
-// }
-// </style>`;
+:host([disabled]) {
+    background: transparent;
+    color: var(--dark);
+    border: solid 2px var(--dark);
 
-// export const createStyles = () => {
-//     return template.content.cloneNode(true);
-// };
+    cursor: default;
+}
+</style>`;
+
+export const createStyles = () => {
+  return template.content.cloneNode(true);
+};

@@ -1,75 +1,75 @@
-// import { WebComponent } from '../../webcomponent';
-// import { createStyles } from './button.style';
+import { WebComponent } from "../webcomponent";
+import { createStyles } from "./button.style";
 
-// type ButtonVariants = 'primary' | 'secondary' | 'danger';
+type ButtonVariants = "primary" | "secondary" | "danger";
 
-// export class Button extends WebComponent {
-//     static readonly tag = 'wb-button';
-//     static readonly observedAttributes = Object.values(['text']);
+export class Button extends WebComponent {
+  static readonly tag = "wb-button";
+  static readonly observedAttributes = Object.values(["text"]);
 
-//     set disabled(disabled: boolean) {
-//         if (disabled) {
-//             this.setAttribute('disabled', '');
-//         } else {
-//             this.removeAttribute('disabled');
-//         }
-//     }
+  set disabled(disabled: boolean) {
+    if (disabled) {
+      this.setAttribute("disabled", "");
+    } else {
+      this.removeAttribute("disabled");
+    }
+  }
 
-//     get disabled() {
-//         return !!this.getAttribute('disabled');
-//     }
+  get disabled() {
+    return !!this.getAttribute("disabled");
+  }
 
-//     set text(text: string) {
-//         this.setAttribute('text', text);
-//     }
+  set text(text: string) {
+    this.setAttribute("text", text);
+  }
 
-//     get text() {
-//         return this.getAttribute('text') ?? '';
-//     }
+  get text() {
+    return this.getAttribute("text") ?? "";
+  }
 
-//     set variant(variant: ButtonVariants) {
-//         this.setAttribute('variant', variant);
-//     }
+  set variant(variant: ButtonVariants) {
+    this.setAttribute("variant", variant);
+  }
 
-//     get variant(): ButtonVariants {
-//         return (this.getAttribute('variant') as ButtonVariants) ?? 'primary';
-//     }
+  get variant(): ButtonVariants {
+    return (this.getAttribute("variant") as ButtonVariants) ?? "primary";
+  }
 
-//     static create(
-//         text: string,
-//         onClick: any,
-//         variant: ButtonVariants = 'primary',
-//         tooltip = ''
-//     ) {
-//         const buttonElement = document.createElement(Button.tag) as Button;
-//         buttonElement.text = text;
-//         buttonElement.setAttribute('variant', variant);
-//         buttonElement.setAttribute('title', tooltip);
-//         buttonElement.addEventListener('click', onClick);
+  static create(
+    text: string,
+    onClick: any,
+    variant: ButtonVariants = "primary",
+    tooltip = ""
+  ) {
+    const buttonElement = document.createElement(Button.tag) as Button;
+    buttonElement.text = text;
+    buttonElement.setAttribute("variant", variant);
+    buttonElement.setAttribute("title", tooltip);
+    buttonElement.addEventListener("click", onClick);
 
-//         return buttonElement;
-//     }
+    return buttonElement;
+  }
 
-//     constructor() {
-//         super();
+  constructor() {
+    super();
 
-//         this.attachShadow({ mode: 'open' }).append(createStyles());
-//     }
+    this.attachShadow({ mode: "open" }).append(createStyles());
+  }
 
-//     connectedCallback() {
-//         this.setAttribute('type', 'button');
-//         this.update();
-//     }
+  connectedCallback() {
+    this.setAttribute("type", "button");
+    this.update();
+  }
 
-//     attributeChangedCallback(_: string, oldValue: string, newValue: string) {
-//         if (oldValue !== newValue) {
-//             this.update();
-//         }
-//     }
+  attributeChangedCallback(_: string, oldValue: string, newValue: string) {
+    if (oldValue !== newValue) {
+      this.update();
+    }
+  }
 
-//     update() {
-//         this.variant = this.variant;
-//         this.disabled = this.disabled;
-//         this.shadowRoot?.replaceChildren(createStyles(), this.text);
-//     }
-// }
+  update() {
+    this.variant = this.variant;
+    this.disabled = this.disabled;
+    this.shadowRoot?.replaceChildren(createStyles(), this.text);
+  }
+}

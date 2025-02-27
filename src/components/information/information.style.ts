@@ -39,24 +39,9 @@ h1 {
 }
 
 p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.75;
   text-align: center;
-  color: var(--black);
-}
-
-a {
-  color: inherit;
-  text-decoration: underline;
-  transition: all 0.1s ease-in-out;
-}
-
-span {
-  text-decoration: underline;
-}
-
-a:hover {
-  color: var(--mint);
 }
 
 @media (max-width: 800px) {
@@ -72,9 +57,7 @@ a:hover {
   }
 
   p {
-    margin: 0 0 1rem;
-    
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 } 
 </style>`;

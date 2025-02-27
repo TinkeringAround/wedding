@@ -1,10 +1,10 @@
 export class DomService {
   static create<T = HTMLDivElement>(params: {
     part?: string;
-    tag: string;
+    tag?: string;
     class?: string;
   }) {
-    const element = document.createElement(params.tag);
+    const element = document.createElement(params.tag ?? "div");
 
     if (params.part) {
       element.setAttribute("part", params.part);
