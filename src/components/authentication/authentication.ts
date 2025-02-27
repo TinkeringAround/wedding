@@ -28,7 +28,7 @@ export class Authentication extends WebComponent {
     if (!StorageService.isAuthenticated()) {
       const password = prompt("Wie lautet das Passwort?");
 
-      if (password?.trim() == ConfigService.PASSWORD.trim()) {
+      if (password?.trim() == ConfigService.CREDENTIALS.trim()) {
         StorageService.login();
         this.initApp();
         return;
