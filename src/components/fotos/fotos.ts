@@ -25,7 +25,7 @@ export class FotosSection extends WebComponent {
 
     const explanation = DomService.create({ tag: "p" });
     explanation.textContent =
-      "Hier könnt ihr euere Fotos hochladen. Nach allen Feierlichkeiten werden wir alle Fotos verteilen.";
+      "Hier könnt ihr eure Fotos hochladen. Nach den Feierlichkeiten werden wir alle Fotos an euch verteilen.";
 
     this.photos = DomService.create({ part: "photos" });
     this.fileInput = DomService.create<HTMLInputElement>({ tag: "input" });
