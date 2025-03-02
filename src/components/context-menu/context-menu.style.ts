@@ -74,6 +74,7 @@ template.innerHTML = `
 
 [part="context-menu-item"][type="button"]:not([disabled]):hover {
     background: var(--mint);
+    color: var(--white);
 }
 
 [part="context-menu-item"][type="button"][disabled] {

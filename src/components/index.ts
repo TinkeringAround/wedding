@@ -12,6 +12,9 @@ import { CountdownSection } from "./countdown/countdown";
 import { InformationSection } from "./information/information";
 import { ZeitplanSection } from "./zeitplan/zeitplan";
 import { FotosSection } from "./fotos/fotos";
+import { IntroSection } from "./intro/intro";
+import { ContactSection } from "./contact/contact";
+import { LoadingSpinner } from "./loading-spinner/loading-spinner.webcomponent";
 
 // Define custom Elements here
 customElements.define(Navigation.tag, Navigation);
@@ -28,3 +31,6 @@ customElements.define(CountdownSection.tag, CountdownSection);
 customElements.define(InformationSection.tag, InformationSection);
 customElements.define(ZeitplanSection.tag, ZeitplanSection);
 customElements.define(FotosSection.tag, FotosSection);
+customElements.define(IntroSection.tag, IntroSection);
+customElements.define(ContactSection.tag, ContactSection);
+customElements.define(LoadingSpinner.tag, LoadingSpinner);

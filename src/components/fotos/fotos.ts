@@ -1,5 +1,6 @@
 import { ContentfulService } from "../../services/contentful.service";
 import { DomService } from "../../services/dom.service";
+import { LoadingSpinner } from "../loading-spinner/loading-spinner.webcomponent";
 import { WebComponent } from "../webcomponent";
 import { createStyles } from "./fotos.style";
 
@@ -9,6 +10,8 @@ export class FotosSection extends WebComponent {
   private readonly photos: HTMLDivElement;
   private readonly fileInput: HTMLInputElement;
   private readonly addImage: HTMLDivElement;
+  private readonly upload: HTMLDivElement;
+  private readonly percentage: HTMLSpanElement;
 
   static create() {
     return document.createElement(FotosSection.tag) as FotosSection;
@@ -16,6 +19,13 @@ export class FotosSection extends WebComponent {
 
   constructor() {
     super();
+
+    const title = DomService.create({ tag: "h1" });
+    title.textContent = "Eindrücke";
+
+    const explanation = DomService.create({ tag: "p" });
+    explanation.textContent =
+      "Hier könnt ihr euere Fotos hochladen. Nach allen Feierlichkeiten werden wir alle Fotos verteilen.";
 
     this.photos = DomService.create({ part: "photos" });
     this.fileInput = DomService.create<HTMLInputElement>({ tag: "input" });
@@ -34,15 +44,36 @@ export class FotosSection extends WebComponent {
 
     this.fileInput.onchange = async () => {
       if (this.fileInput.files && this.fileInput.files.length > 0) {
+        this.upload.style.display = "flex";
+        this.percentage.textContent = `Uploading ${1}/${
+          this.fileInput.files?.length
+        } Bilder...`;
         await ContentfulService.uploadImageToContentful(
-          Object.values(this.fileInput.files)
+          Object.values(this.fileInput.files),
+          (percentage) => {
+            this.percentage.textContent = `Uploading ${percentage}/${this.fileInput.files?.length} Bilder...`;
+          }
         );
 
+        this.upload.style.display = "none";
+        confirm("🎉 Die Bilder wurden erfolgreich hochgeladen, vielen Dank!");
         this.loadImages();
       }
     };
 
-    this.attachShadow({ mode: "closed" }).append(createStyles(), this.photos);
+    this.percentage = DomService.create<HTMLSpanElement>({ tag: "span" });
+
+    this.upload = DomService.create({ part: "upload" });
+    this.upload.append(LoadingSpinner.create(), this.percentage);
+    this.upload.style.display = "none";
+
+    this.attachShadow({ mode: "closed" }).append(
+      createStyles(),
+      title,
+      explanation,
+      this.photos,
+      this.upload
+    );
   }
 
   connectedCallback() {
@@ -51,8 +82,6 @@ export class FotosSection extends WebComponent {
 
   private loadImages() {
     ContentfulService.getImages().then((images) => {
-      this.style.setProperty("--items", `${images.length + 1}`);
-
       this.photos.replaceChildren(
         this.addImage,
         ...images.map((image) => {
@@ -60,7 +89,7 @@ export class FotosSection extends WebComponent {
             tag: "img",
           });
           imageElement.title = image.id;
-          imageElement.src = image.url;
+          imageElement.src = `${image.url}?fm=jpg&q=60`;
 
           return imageElement;
         })

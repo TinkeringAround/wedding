@@ -17,6 +17,7 @@
 
 * {
   color: var(--black);
+  scroll-behavior: smooth;
 }
 
 html,

@@ -9,8 +9,8 @@ template.innerHTML = `
   --borderRadius: 2rem;
   --fontFamily: "Bodoni Moda", serif;
   --fontWeight: 400;
-  --color: var(--black);
-  --background: var(--white);
+  --color: var(--white);
+  --background: var(--mint);
   --hoverBackground: var(--white);
 
   display: flex;
@@ -24,7 +24,7 @@ template.innerHTML = `
   font-family: var(--fontFamily);
   background: var(--background);
   color: var(--color);
-  border-bottom: 2px solid transparent;
+  border-bottom: 2px solid var(--white);
   border-radius: 2px;
 
   transition: all 0.15s ease-in-out;
@@ -60,10 +60,22 @@ template.innerHTML = `
   box-sizing: border-box;
 }
 
+[part="input"]::placeholder {
+  color: var(--white);
+  opacity: 0.5;
+}
+
 :host(:hover), :host(:focus), :host(:focus-visible) {
   border-bottom: solid 2px var(--green);
   background: var(--hoverBackground);
+  --color: var(--green);
 }
+
+:host(:hover) [part="input"]::placeholder {
+  color: var(--grey);
+  opacity: 0.5;
+}
+
 </style>`;
 
 export const createStyles = () => {

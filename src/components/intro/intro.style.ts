@@ -6,20 +6,27 @@ template.innerHTML = `
 
   width: 100vw;
   max-width: inherit;
+  
+  padding: 0;
 }
 
 div[part="image"] {
-  height: calc(var(--vh) * 65);
+  height: calc(var(--vh) * 45);
+  min-height: 300px;
 
-  background-image: url("https://images.ctfassets.net/df3z1ez0ud42/79T1UTEWDmAYgT2eeJO87v/c6e5749287ae0ee88197614f3752a8fe/18.jpeg?fm=jpg&q=60");
+  background-image: url("https://images.ctfassets.net/df3z1ez0ud42/6gwdplPnsR9GTQgPlQ1zRz/3a343fcdc2ae9c4c617eb7760c14bb81/Einladung_bearbeitet-min.png?fm=jpg&q=60");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 @media (max-width: 800px) {
+  :host {
+    padding: 0;
+  }
+
   div[part="image"] {
-    height: calc(var(--vh) * 60);
+    height: calc(var(--vh) * 100);
   }
 }
 </style>`;

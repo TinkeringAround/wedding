@@ -9,7 +9,7 @@ template.innerHTML = `
    --padding: 0.75rem 1.25rem;
 
    --fontFamily: "Bodoni Moda", serif;
-   --color: var(--dark);
+   --color: var(--white);
 
    position: relative;
 
@@ -19,22 +19,23 @@ template.innerHTML = `
    height: min-content;
    min-height: 60px;
    padding: 10px;
-   width: 500px;
 
    font-size: var(--fontSize);
    font-family: var(--fontFamily);
    font-optical-sizing: auto;
    font-style: normal;
 
-   background: var(--white);
+   background: var(--mint);
    color: var(--color);
 
-   border-bottom: 2px solid transparent;
+   border-bottom: 2px solid var(--white);
    border-radius: 2px;
    outline: none;
 
    transition: background 0.15s ease-in-out;
    box-sizing: border-box;
+
+   cursor: pointer;
 }
 
 [part="select"] {
@@ -69,7 +70,8 @@ ${ContextMenu.tag} {
 :host(:hover), :host(:focus), :host(:focus-visible) {
   border-bottom: solid 2px var(--green);
   background: var(--white);
-  color: var(--black);
+  color: var(--green);
+  --color: var(--green);
 }
 
 @media (max-width: 800px) {

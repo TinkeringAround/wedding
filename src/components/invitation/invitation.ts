@@ -16,7 +16,7 @@ export class InvitationSection extends WebComponent {
       {
         header: "Wir heiraten...",
         content:
-          "und Ihr seid herlich eingeladen zu unserer Hochzeit im Zeichen des Schedischen Midsommars!",
+          "und Ihr seid herzlich eingeladen zu<br> unserer Hochzeit im Zeichen des <br><i>Schwedischen Midsommars</i>",
       },
       {
         header: "Wo?",
@@ -28,9 +28,12 @@ export class InvitationSection extends WebComponent {
       },
       {
         header: "Wann?",
-        content: "Am <span>28.06.2025</span> um <span>14.30 Uhr</span>",
+        content: "Am <span>28.06.2025</span> um <span>14:30 Uhr</span>",
       },
     ];
+
+    const leftImage = DomService.create({ part: "left" });
+    const rightImage = DomService.create({ part: "right" });
 
     this.attachShadow({ mode: "closed" }).append(
       createStyles(),
@@ -44,7 +47,9 @@ export class InvitationSection extends WebComponent {
         `;
 
         return section;
-      })
+      }),
+      leftImage,
+      rightImage
     );
   }
 }

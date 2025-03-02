@@ -31,7 +31,6 @@ export class ContentfulService {
   }
 
   static async createGuests(guests: Guest[]) {
-    console.log("Creating guests", guests);
     return Promise.all([
       ...guests.map((guest) =>
         ContentfulService.client.entry.create(
@@ -60,7 +59,6 @@ export class ContentfulService {
     guests: Guest[],
     guestsWithId: EntryProps<KeyValueMap>[] | never[]
   ) {
-    console.log("Updating guest", guests);
     return Promise.all([
       ...guests.map((guest) => {
         const guestToUpdate = guestsWithId.find(
@@ -94,7 +92,7 @@ export class ContentfulService {
       });
   }
 
-  static async getImages(limit = 36) {
+  static async getImages(limit = 23) {
     return ContentfulService.client.asset
       .getMany({
         query: {
@@ -120,8 +118,12 @@ export class ContentfulService {
       });
   }
 
-  static async uploadImageToContentful(files: File[]) {
+  static async uploadImageToContentful(
+    files: File[],
+    onupdate?: (procent: number) => void
+  ) {
     try {
+      let uploading = 1;
       for (let file of files) {
         const asset = await ContentfulService.client.asset.createFromFiles(
           {},
@@ -157,6 +159,11 @@ export class ContentfulService {
           asset,
           "en-US"
         );
+
+        uploading += 1;
+        if (onupdate) {
+          onupdate(uploading);
+        }
       }
     } catch (error) {
       console.error("❌ Fehler beim Hochladen:", error);

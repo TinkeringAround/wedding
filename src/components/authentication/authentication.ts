@@ -1,10 +1,12 @@
 import { ConfigService } from "../../services/config.service";
 import { StorageService } from "../../services/storage.service";
 import { ComingSection } from "../coming/coming";
+import { ContactSection } from "../contact/contact";
 import { CountdownSection } from "../countdown/countdown";
 import { FotosSection } from "../fotos/fotos";
 import { HeroSection } from "../hero/hero";
 import { InformationSection } from "../information/information";
+import { IntroSection } from "../intro/intro";
 import { InvitationSection } from "../invitation/invitation";
 import { Navigation } from "../navigation/navigation";
 import { WebComponent } from "../webcomponent";
@@ -47,11 +49,13 @@ export class Authentication extends WebComponent {
     if (main) {
       main.replaceChildren(
         Navigation.create(),
-        HeroSection.create(),
+        IntroSection.create(),
         InvitationSection.create(),
         CountdownSection.create(),
-        InformationSection.create(),
+        HeroSection.create(),
         ZeitplanSection.create(),
+        InformationSection.create(),
+        ContactSection.create(),
         ComingSection.create(),
         FotosSection.create()
       );

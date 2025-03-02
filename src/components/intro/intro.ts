@@ -1,12 +1,12 @@
 import { DomService } from "../../services/dom.service";
 import { WebComponent } from "../webcomponent";
-import { createStyles } from "./hero.style";
+import { createStyles } from "./intro.style";
 
-export class HeroSection extends WebComponent {
-  static tag = "wedding-hero";
+export class IntroSection extends WebComponent {
+  static tag = "wedding-intro";
 
   static create() {
-    return document.createElement(HeroSection.tag) as HeroSection;
+    return document.createElement(IntroSection.tag) as IntroSection;
   }
 
   constructor() {

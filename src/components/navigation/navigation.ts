@@ -1,3 +1,4 @@
+import { DomService } from "../../services/dom.service";
 import { WebComponent } from "../webcomponent";
 import { createStyles } from "./navigation.style";
 
@@ -11,10 +12,10 @@ export class Navigation extends WebComponent {
   constructor() {
     super();
 
-    this.attachShadow({ mode: "closed" }).append(createStyles());
+    const link = DomService.create<HTMLAnchorElement>({ tag: "a" });
+    link.textContent = "Zu/Absage";
+    link.href = "#coming";
+
+    this.attachShadow({ mode: "closed" }).append(createStyles(), link);
   }
-
-  connectedCallback() {}
-
-  disconnectedCallback() {}
 }

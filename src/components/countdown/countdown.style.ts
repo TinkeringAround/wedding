@@ -6,9 +6,9 @@ template.innerHTML = `
 
   width: 100vw;
   max-width: inherit;
-  padding: 100px 0;
-  
-  background: var(--mint);
+  padding: 50px 0;
+
+  background: transparent;
 }
 
 div[part="wrapper"] {
@@ -23,7 +23,7 @@ b {
 }
 
 a {
-  color: var(--white);
+  color: var(--green);
   text-decoration: none;
   outline: none;
 
@@ -31,7 +31,7 @@ a {
 }
 
 a:hover {
-  color: var(--green);
+  color: var(--mint);
 }
 
 @media (max-width: 800px) {

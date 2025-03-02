@@ -9,7 +9,7 @@ template.innerHTML = `
     justify-content: center;
     align-items: center;
 
-    height: 65px;
+    height: 60px;
     padding: var(--padding);
     text-transform: uppercase;
 
@@ -28,8 +28,8 @@ template.innerHTML = `
 }
 
 :host([variant="primary"]) {
-    background: var(--green);
-    color: var(--white);
+    background: var(--white);
+    color: var(--green);
 }
 
 :host([variant="secondary"]) {
@@ -44,7 +44,7 @@ template.innerHTML = `
 
 :host([variant="primary"]:not([disabled]):hover) {
     background: var(--white);
-    color: var(--blue);
+    color: var(--green);
     border: solid 2px var(--green);
 }
 
