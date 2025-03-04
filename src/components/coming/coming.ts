@@ -38,23 +38,34 @@ export class ComingSection extends WebComponent {
     title.textContent = "Seid ihr dabei?";
 
     const input = Input.create("", "Vor- und Nachname", "Ja, ich komme...");
+    input.id = "name";
     const dropDown = DropDown.create(
       ["Egal", "Vegetarisch", "Vegan"],
-      "und bevorzuge"
+      "und zu Essen bevorzuge ich..."
     );
+    const unvertraeglichkeiten = Input.create(
+      "",
+      "Unverträglichkeiten",
+      "aber, bitte achtet auf..."
+    );
+    unvertraeglichkeiten.id = "unvertraeglichkeiten";
 
     this.formular.append(
       title,
       input,
       dropDown,
+      unvertraeglichkeiten,
       Button.create("Abschicken", () => this.submit())
     );
   }
 
   private async submit() {
     const guests: Guest[] = [];
-    const name = (this.formular.querySelector(Input.tag) as Input)?.value;
+    const name = (this.formular.querySelector("#name") as Input)?.value;
     const food = (this.formular.querySelector(DropDown.tag) as DropDown)?.value;
+    const unvertraeglichkeiten = (
+      this.formular.querySelector("#unvertraeglichkeiten") as Input
+    )?.value;
 
     if (name && food && name != "" && food != "") {
       guests.push({
@@ -65,6 +76,7 @@ export class ComingSection extends WebComponent {
           .join(" ")
           .toLowerCase(),
         food: food.toLowerCase(),
+        unvertraeglichkeiten,
       });
     }
 

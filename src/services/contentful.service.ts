@@ -43,6 +43,9 @@ export class ContentfulService {
               food: {
                 "en-US": guest.food,
               },
+              unvertraeglichkeiten: {
+                "en-US": guest.unvertraeglichkeiten,
+              },
             },
           }
         )
@@ -76,6 +79,9 @@ export class ContentfulService {
                 },
                 food: {
                   "en-US": guest.food,
+                },
+                unvertraeglichkeiten: {
+                  "en-US": guest.unvertraeglichkeiten,
                 },
               },
             }

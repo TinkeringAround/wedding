@@ -24,7 +24,7 @@ export class InformationSection extends WebComponent {
       {
         header: "Euer persönliches Band",
         content: `
-          Mit dieser Einladung habt ihr ein Band erhalten – ein Symbol der Verbindung, das an diesem besonderen Tag Teil unserer Trauung sein wird. Gestaltet es ganz nach euren Vorstellungen: ob bemalt, beschrieben, bestickt oder mit kleinen Anhängern verziert. Ihr könnt das gesamte Band oder nur einen einzelnen Abschnitt kreativ gestalten– lasst eurer Kreativität freien Lauf!
+          Mit dieser Einladung habt ihr ein Band erhalten – ein Symbol der Verbindung, das an diesem besonderen Tag Teil unserer Trauung sein wird. Gestaltet es ganz nach euren Vorstellungen: ob bemalt, beschrieben, bestickt oder mit kleinen Anhängern verziert (aber auf keinen Fall zerschneiden!). Ihr könnt das gesamte Band oder nur einen einzelnen Abschnitt kreativ gestalten– lasst eurer Kreativität freien Lauf!
           <br><br>
           Ein Band steht für Zusammenhalt, für gemeinsame Erlebnisse und für all das, was uns verbindet. Vielleicht möchtet ihr eure Wünsche für uns darauf verewigen oder etwas einbringen, das euch mit uns verbindet. Egal, wie ihr es gestaltet – wir freuen uns sehr, eure Bänder bei unserer freien Trauung zu sehen und diesen Moment gemeinsam mit euch zu erleben!
           `,
