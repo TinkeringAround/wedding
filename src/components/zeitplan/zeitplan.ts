@@ -19,20 +19,32 @@ export class ZeitplanSection extends WebComponent {
       {
         header: "14:30 Uhr",
         content: `
-          Pünktlich um 14:30 Uhr beginnt unsere freie Trauung auf der Wiese, umgeben von Natur und hoffentlich schönem Sommerwetter. Sollte das Wetter nicht mitspielen, verlegen wir die Zeremonie in den nebenliegenden Pferdestall – genauso stimmungsvoll und gemütlich. Wir freuen uns darauf, diesen besonderen Moment mit euch zu teilen!
+          Um 14:30 Uhr beginnt unsere freie Trauung auf der Wiese, umgeben von Natur und hoffentlich schönem Sommerwetter. Sollte das Wetter nicht mitspielen, verlegen wir die Zeremonie in den nebenliegenden Pferdestall – genauso stimmungsvoll und gemütlich. Wir freuen uns darauf, diesen besonderen Moment mit euch zu teilen!
           `,
       },
       {
-        header: "ca. 15:30 Uhr",
+        header: "15:30 Uhr",
         content: `
-          Nach der Zeremonie und den Gratulationen laden wir euch zu FIKA ein – einer gemütlichen Kaffeepause mit selbst gebackenem Kuchen, schwedischen Leckereien und einer entspannten Atmosphäre unter freiem Himmel. Während wir unser Fotoshooting nachholen und euch nach und nach dazu holen, könnt ihr die Zeit draußen genießen – ob beim Spielen, Basteln oder einfach bei netten Gesprächen mit einem Kaffee in der Hand.
+              Nach der Zeremonie haben wir Zeit für Gratulation und ein gemeinsames FIKA – einer gemütlichen Kaffeepause mit selbst gebackenem Kuchen, schwedischen Leckereien und einer entspannten Atmosphäre unter freiem Himmel. Während wir das Brautpaarshooting machen, könnt ihr die Zeit draußen genießen – ob beim Spielen oder einfach bei netten Gesprächen mit einem Kaffee vom Amselkaffee in der Hand.
           `,
       },
       {
-        header: "ca. 18:30 Uhr",
+        header: "16:45 Uhr",
         content: `
-          Gegen 18:30 Uhr geht es mit dem Abendessen weiter. Draußen erwartet euch ein Live Cooking mit schwedischen Spezialitäten, während wir drinnen das erste Mal alle gemeinsam Platz nehmen. Danach startet unser Abendprogramm – mit schönen Momenten, Tanz und natürlich unserer Party! Wer mag, kann sich hier ganz nach Lust und Laune einbringen oder einfach den Abend in entspannter Atmosphäre genießen.
+          Fotoshooting! Wir holen euch nach und nach zu einem gemeinsamen Fotoshooting dazu für unvergessliche Erinnerungen! Haltet euch bitte bereit.
           `,
+      },
+      {
+        header: "18:30 Uhr",
+        content: `
+          Gegen 18:30 Uhr gehen wir in den Schafstall und nehmen gemeinsam Platz während das Abendessen vorbereitet wird. Ab 19 Uhr erwartet euch dann draußen ein Live Cooking mit schwedischen Spezialitäten.
+          `,
+      },
+      {
+        header: "22:00 Uhr",
+        content: `
+          Showtime - es steht unser Hochzeitstanz an. Danach startet unser Abendprogramm – mit schönen Momenten, Tanz und natürlich unserer Party! Wer mag, kann sich hier ganz nach Lust und Laune einbringen oder einfach den Abend in entspannter Atmosphäre genießen.
+          <b>Ab dieser Uhrzeit steht auch unser Fahrdienst bereit, der Gruppen bis zu 6 Personen nach Hause bringen kann (bis nach Braunschweig). Sprecht uns an!</b>`,
       },
     ];
 
